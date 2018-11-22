@@ -1,12 +1,13 @@
-### bash
+#!/bin/sh
+variable="some text"
 
-if [-n "$variable"]
+if [ -n "$variable" ]
 then
- echo $variable"is non zero"
+ echo $variable" is non zero"
 fi
 
-if [-z "$variable"];then
-  echo $variable"is zero"
+if [ -z "$variable" ];then
+  echo $variable" is zero"
 fi
 
 
