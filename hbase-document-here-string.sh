@@ -10,6 +10,8 @@ echo $result | while read line;do
     for each_word in $line; do      
         # substring of string, compare string
         if [[ ${each_word:0:5} == value ]]; then
+            # substring, remove last characters 
+            # ${each_file::-4}
             if [[ ${each_word:6} == Success ]]; then
                 echo "done"
                 exit(0)
