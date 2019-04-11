@@ -1,0 +1,6 @@
+if [ ! -n "$1" ]
+then
+  echo "user name should be specified, like: q455357"
+  exit 1
+fi  
+USER_NAME=$1
