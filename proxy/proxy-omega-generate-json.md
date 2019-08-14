@@ -13,4 +13,5 @@ cat index.txt | awk 'BEGIN{a=0}{a=a+1;if(a%2==0){ printf("%s:%s:%s:%x\n",$2,$3,$
 * [Firefox FoxyProxy](https://addons.mozilla.org/ru/firefox/addon/foxyproxy-standard/)
 * translator for copied text from html page to xml for FoxyProxy.import operation
 ```bash
+wget https://github.com/cherkavi/python-utilitites/blob/master/proxy/foxyproxy-generator.py
 ```
