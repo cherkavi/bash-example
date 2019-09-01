@@ -10,6 +10,9 @@ trap '{ echo "trap section: error happend"; mkdir ~/notexistingfolder; }' ERR
 ls ~/notexistingfolder
 # 1.
 # ls ~/notexistingfolder || true
+# to prevent it, need to stop immediatelly even inside pipeline: 
+# set -o pipeline
+
 # 2.
 # if ! ls ~/notexistingfolder; then 
 #    echo "exists"
