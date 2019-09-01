@@ -8,6 +8,13 @@
 trap '{ echo "trap section: error happend"; mkdir ~/notexistingfolder; }' ERR
 
 ls ~/notexistingfolder
+# 1.
+# ls ~/notexistingfolder || true
+# 2.
+# if ! ls ~/notexistingfolder; then 
+#    echo "exists"
+# fi
+
 echo "folder was created and script can continue execution"
 
 
