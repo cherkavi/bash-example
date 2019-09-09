@@ -21,5 +21,5 @@ ls ~/notexistingfolder
 echo "folder was created and script can continue execution"
 
 
-# using EXIT when need to execute something before exit
+# using EXIT when need to execute something before exit, "finally" clause
 # trap '{ echo "trap section: error happend"; mkdir ~/notexistingfolder; }' ERR EXIT SIGTERM
