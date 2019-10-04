@@ -1,3 +1,4 @@
+# summarize input arguments
 sum=0
 for each in "$@"
 do
