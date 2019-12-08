@@ -1,4 +1,5 @@
 # https://makefiletutorial.com/
+# https://www.gnu.org/software/make/manual/make.html
 
 # just a simple example of using "make" command
 # <target> : <dependency or filename>
