@@ -13,10 +13,11 @@ function print_rest(array_of_element){
      }   
 }
 
+# skip first line, skip line by number
 NR == 1 { next }
 
 
-# next condition is redundant, but showing possibility
+# skip first 3 lines
 # format output
 NR >3 { printf " >> %s <<\n", $N }
 
