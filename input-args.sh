@@ -1,3 +1,6 @@
+# check return value 
+if [[ 1 -eq "$?" ]]; then echo "error"; else echo "done"; fi
+
 # check input parameter for existence, check amount of input parameters
 if [ ! -n "$2" ]
 then
