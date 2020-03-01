@@ -8,3 +8,7 @@ find /mapr/dp.prod.zurich/vantage/data/enriched/777111/2019 -maxdepth 3 -mindept
 do 
    echo $each_session
 done
+
+
+	# !!! warning for ssh !!!
+	# "ssh -n " instead of "ssh "
