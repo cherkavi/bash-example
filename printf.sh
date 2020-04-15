@@ -1,3 +1,6 @@
+# bash float, float in bash, double in bash, bash double
+LC_NUMERIC="en_US.UTF-8"
+
 var1=" >one< "
 var2=50
 var3=2.3337
