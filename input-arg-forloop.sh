@@ -1,5 +1,7 @@
 echo "# summarize input arguments"
 sum=0
+
+# all input arguments, all parameters, all input parameters
 for each in "$@"
 do
    sum=$(( each + sum))
