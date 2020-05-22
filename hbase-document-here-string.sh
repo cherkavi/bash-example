@@ -9,6 +9,7 @@ echo $result | while read line;do
     # split up line of text to words
     for each_word in $line; do      
         # substring of string, compare string
+        # substring of string: echo 'hello' | cut -c3-4
         if [[ ${each_word:0:5} == value ]]; then
             # substring, remove last characters 
             # ${each_file::-4}
