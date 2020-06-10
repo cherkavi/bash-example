@@ -7,9 +7,10 @@ echo `print_title`
 echo $(print_title)
 
 # --------
-# function should return Integers only 
+# function should return Integers only, checking return value via $?
 print_invitation(){
 	echo "this is invitation for $1"
+	# you can return only digits
 	return 5
 }
 
