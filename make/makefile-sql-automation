@@ -1,0 +1,25 @@
+current_dir = $(shell pwd)
+include ${current_dir}/vars.sh
+
+usage:
+	@echo "make start                # start mysql database"
+	@echo "make stop                 # stop mysql database"
+	@echo "make write-ddl            # create Tables in database"
+	@echo "make write-ddl-view       # create View in database"
+	@echo "make write-dml            # write data to database"
+	@echo "make remove-mysql-volume  # write data to database"
+	
+start:
+	@docker-compose --project-name ${PROJECT_NAME} -f mysql-with-admin.yaml up
+
+stop:
+	@docker-compose --project-name ${PROJECT_NAME} -f mysql-with-admin.yaml down
+
+write-ddl:
+	docker exec ${PROJECT_NAME}"_mysql_1" /bin/sh -c 'mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" < /scripts/script-ddl.sql'
+
+write-ddl-view:
+	@docker exec ${PROJECT_NAME}_mysql_1 /bin/sh -c 'mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" < /scripts/script-ddl-view.sql'
+
+write-dml:
+	@docker exec ${PROJECT_NAME}_mysql_1 /bin/sh -c 'mysql -uroot -p"${MYSQL_ROOT_PASSWORD}" < /scripts/script-dml.sql'
