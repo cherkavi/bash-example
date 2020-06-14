@@ -16,3 +16,14 @@ for each_string in "one" "two" "three"
 do
    echo $each_string
 done
+
+
+# example of walking through list of environment variables, variable of variable, variable by name
+for each_val in "MYSQL_ROOT_PASSWORD" "MYSQL_USER" "MYSQL_PASSWORD"
+do
+    declare "current_variable=$each_val"
+    if [ -z ${!current_variable} ]; then
+        echo "file .env should contains $each_val"
+        exit 1
+    fi
+done
