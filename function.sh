@@ -17,6 +17,17 @@ print_invitation(){
 print_invitation 'John'
 echo $?
 
+# --------
+# function can 'return' string
+generate_body() {
+cat <<EOF
+   "string from function"
+EOF
+}
+
+echo ">>>> $(generate_body)"
+
+
 # ---------
 # function set argument by name
 set_argument_by_name(){
