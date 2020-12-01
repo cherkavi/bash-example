@@ -17,6 +17,12 @@ do
    echo $each_string
 done
 
+my_list=("one" "two" "three")
+for each_string in ${my_list[@]}; do
+   echo $each_string
+done
+
+
 
 # example of walking through list of environment variables, variable of variable, variable by name
 for each_val in "MYSQL_ROOT_PASSWORD" "MYSQL_USER" "MYSQL_PASSWORD"
