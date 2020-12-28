@@ -1,6 +1,12 @@
 # check return value 
 if [[ 1 -eq "$?" ]]; then echo "error"; else echo "done"; fi
 
+
+if [[ $# -gt 3 ]] || [[ $# -eq 0 ]];then
+   echo "Either 0 or more than 2 input arguments are expected"
+   exit 1
+fi
+
 # check existence for input parameter #2 
 # if [ ! -n "$2" ]
 if [ -z "$2" ]
