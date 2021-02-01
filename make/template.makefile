@@ -1,5 +1,23 @@
 OS := $(shell uname)
 ENV := "production"
+SHELL := /bin/bash
+RED=\033[0;31m
+NC=\033[0m # No Color
+
+##@ Utilities
+help:  ## Display this help
+	@printf "${RED}<credentials.sh>${NC} should have next properties: \n"
+	@printf "${RED}----------------------------${NC}"
+	@echo "export AWS_REGION=us-east-1"
+	@echo "export AWS_S3_BUCKET_NAME=marketing-bucket"
+	@echo "export DB_LOGIN=admin"
+	@echo "export DB_PASSW=mdJBDH"
+	@echo "export DB_HOST=hlm-.a.db.ondigitalocean.com"
+	@echo "export DB_PORT=25060"
+	@printf "${RED}----------------------------${NC}"
+
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-24s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)	
+
 
 all: operation1 operation2 ## execute all
 
