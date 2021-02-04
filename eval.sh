@@ -23,3 +23,5 @@ evaluation $a 'cat 1.txt'
 # execute one line of text or commands from file
 echo "ls -la" | xargs -L 1 -I {} sh -c "{}"
 
+# execute one line of text 
+echo "ls -la" | { read line; eval $line; }
