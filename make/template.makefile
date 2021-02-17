@@ -16,7 +16,7 @@ help:  ## Display this help
 	@echo "export DB_PORT=25060"
 	@printf "${RED}----------------------------${NC}"
 
-	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-24s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)	
+	@awk 'BEGIN {FS = ":.*##"; printf "\nUsage:\n  make \033[36m<target>\033[0m\n"} /^[a-zA-Z_-]+:.*?##/ { printf "  \033[36m%-24s\033[0m %s\n", $$1, $$2 } /^##@/ { printf "\n\033[1m%s\033[0m\n", substr($$0, 5) } /^##%/ { printf "> \033[0m%s\033[0m\n", substr($$0, 5) } ' $(MAKEFILE_LIST)	
 
 
 all: operation1 operation2 ## execute all
@@ -38,6 +38,7 @@ endif
 
 
 ##@ Container management
+##% additional information for container management
 start: ## Start all containers
 	./docker-compose.sh up -d
 stop: ## Stop all containers
