@@ -3,8 +3,12 @@ print_title(){
 }
 
 print_title
-echo `print_title`
 echo $(print_title)
+# execute function by name
+echo `print_title`
+echo $("print_title")
+function_for_execution=`echo "print_title"`
+$function_for_execution
 
 # --------
 # function should return Integers only, checking return value via $?

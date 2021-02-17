@@ -10,6 +10,7 @@
 SHELL=/bin/bash
 global_var_1="$(SHELL)"
 export global_var_2="$(SHELL)"
+OS_NAME="$(shell uname -s)"
 
 # include variables from external file
 include config-var.mk
@@ -33,6 +34,12 @@ first.task: two-lines.txt
 	echo "> first stask"
 	@echo "$(global_var_1)"
 	@echo $$global_var_2
+ifeq($(OS_NAME),"Linux")
+	echo "Linux OS"
+endif
+ifeq($(OS_NAME),"Darwin")
+	echo "MacOS"
+endif
 
 
 ### second.task :  comment for second task
