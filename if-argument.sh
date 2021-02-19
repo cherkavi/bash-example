@@ -28,7 +28,7 @@ else
       echo "\$var is NOT empty"
 fi
 
-
+# ```help test```
 # [ -e filepath ] Returns true if file exists.
 # [ -x filepath ] Returns true if file exists and executable.
 # [ -S filepath ] Returns true if file exists and its a socket file.
