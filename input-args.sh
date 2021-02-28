@@ -7,6 +7,11 @@ if [[ $# -gt 3 ]] || [[ $# -eq 0 ]];then
    exit 1
 fi
 
+if [[ $# != 3 ]]
+then
+    echo " 3 input parameters expected"
+fi
+
 # check existence for input parameter #2 
 # if [ ! -n "$2" ]
 if [ -z "$2" ]
