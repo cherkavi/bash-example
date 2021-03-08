@@ -1,5 +1,6 @@
 # check return value 
 if [[ 1 -eq "$?" ]]; then echo "error"; else echo "done"; fi
+if [[ "$1" == `echo "test"` ]];then echo "working"; fi
 
 
 if [[ $# -gt 3 ]] || [[ $# -eq 0 ]];then
