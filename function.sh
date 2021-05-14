@@ -49,3 +49,18 @@ set_global_var(){
 }
 set_global_var
 echo $return_value
+
+# ---------
+# function alias
+
+function ssh-staging-copy-from(){
+	if [[ -z "$1" ]]; then
+		echo "mandatory first parameter is empty"
+		return 1
+	fi
+}
+
+function staging-ssh-copy-from(){
+        ssh-staging-copy-from $*
+}
+
