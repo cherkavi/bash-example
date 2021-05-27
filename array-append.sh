@@ -5,6 +5,11 @@ arrVar=("AC" "TV" "Mobile" "Fridge" "Oven" "Blender")
 arrVar+=("Dish Washer")
 echo ${arrVar[@]}
 
+# split string to array
+my_string="Ubuntu;Linux Mint;Debian;Arch;Fedora"  
+my_array=($(echo $my_string | tr ";" "\n"))
+echo ${my_array[@]}":  "${my_array[0]}", "${my_array[1]}
+
 # Iterate the loop to read and print each array element
 for value in "${arrVar[@]}"; do
     echo $value
@@ -12,9 +17,9 @@ done
 
 # in array 
 function is_in_array () {
-  local e match="$1"
+  local next_array_element search_string="$1"
   shift
-  for e; do [[ "$e" == "$match" ]] && return 0; done
+  for next_array_element; do [[ "${next_array_element}" == "${search_string}" ]] && return 0; done
   return 1
 }
 
@@ -26,4 +31,5 @@ if [[ 1 == "$is_in_array_result" ]]; then
 else
     echo "Mobile"" in array"
 fi
+
 
