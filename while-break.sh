@@ -21,3 +21,7 @@ do
         last_line=$line
 done  < <( ls )
 echo "changed line >> "$last_line
+
+
+# infinite loop
+while true; do echo "hello"; done
