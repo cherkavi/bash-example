@@ -2,8 +2,8 @@ confirmation() {
     echo -n "Are you sure (y/n)? "
     while read -r -n 1 -s answer; do
         if [[ $answer = [YyNn] ]]; then
-            [[ $answer = [Yy] ]] && result=1
-            [[ $answer = [Nn] ]] && result=0
+            [[ $answer = [Yy] ]] && result=0
+            [[ $answer = [Nn] ]] && result=1
             break
         fi
     done
@@ -11,4 +11,8 @@ confirmation() {
 }
 
 confirmation
-echo $?
+if [ $? -eq 0 ]; then
+    echo "yes"
+else
+    echo "no"
+fi
