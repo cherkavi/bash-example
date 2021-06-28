@@ -1,4 +1,5 @@
 # compare two files for equals strings
+# print equals lines
 # inner join for two files
 
 # one line bash approach: grep -F -f file1 file2
