@@ -1,3 +1,8 @@
+echo "amount of arguments:" $#
+echo "values:" $@
+echo "first argument" ${1}
+echo "last argument" ${!#}
+
 # check return value 
 if [[ 1 -eq "$?" ]]; then echo "error"; else echo "done"; fi
 if [[ "$1" == `echo "test"` ]];then echo "working"; fi
