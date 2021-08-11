@@ -21,6 +21,7 @@ eval "$var_name+=(3)"
 eval "echo \${$var_name[@]}"
 
 # walk through array
+# array by name
 eval "output_array=(\${$var_name[@]})"
 echo "result length: ${#output_array[@]}"
 for each_value_in_array in "${output_array[@]}"; do    
