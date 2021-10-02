@@ -9,6 +9,12 @@ for each_node in "${servers[@]}" ; do
     echo "$each_node"
 done
 
+BRANDS_LIST=($(ls *.brands_s3))
+BRANDS_LIST=("one.brands_s3" "two.brands_s3" "three.brands_s3")
+for each_value in "${BRANDS_LIST[@]}"; do    
+    echo $each_value
+done
+
 # one line print ( no semicolon after "do" ), inline while
 printf 'one\n two\n three\n' | while read each_value;do echo $each_value;done
 find . -name "*.json" | while read each_file; do cat "$each_file" > "${each_file}".txt; done
