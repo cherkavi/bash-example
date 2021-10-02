@@ -1,4 +1,4 @@
-
+# redirect output to while redirect 
 ls -la >> output.file
 
 # while redirect output
