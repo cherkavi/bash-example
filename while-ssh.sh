@@ -1,3 +1,4 @@
+# while with ssh while ssh
 # first line execution only
 cat airflow-w*.ini | grep -A 1 "main]" | grep -v "\-\-" | grep -v "main" | while read each_host
 do 
