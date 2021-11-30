@@ -64,3 +64,28 @@ function staging-ssh-copy-from(){
         ssh-staging-copy-from $*
 }
 
+
+# ----------
+# function array argument
+function function_with_array_argument() {
+    mvn_modules=""
+    for java_module in ${1}
+    do
+        mvn_modules+=":${java_module},"
+    done
+    echo "${mvn_modules}"
+
+    changed_files_list=$(echo "${mvn_modules[@]}" | tr '\n' ' ')
+    echo "${changed_files_list}"    
+}
+
+
+java_modules=(
+    "interval"
+    "marker"
+    "search"
+    "video"
+)
+
+result=$(function_with_array_argument "${java_modules[@]}")
+
