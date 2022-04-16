@@ -22,7 +22,8 @@ find . -name "*.json" | while read each_file; do cat "$each_file" > "${each_file
 # the same but shorter
 # for each_node in gtx{0..4}-ev.zur ; do
 
-for each_string in "one" "two" "three"
+IFS=$'\n' # it is necessary for non-manual input, for new line for loop line
+for each_string in "one" "two" "three four five"
 do
    echo $each_string
 done
