@@ -29,7 +29,12 @@ else
 fi
 
 # ```help test```
-# [ -e filepath ] Returns true if file exists.
+# test ! -f $PATH_TO_FILE;echo $?
+#
+# [ -f filepath ] Returns true if file NOT exists and executable.
+# [ ! -f filepath ] Returns true if file NOT exists.
+# [ -e filepath ] Returns true if file exists and executable.
+# [ -d filepath ] Returns true if path is directory.
 # [ -x filepath ] Returns true if file exists and executable.
 # [ -S filepath ] Returns true if file exists and its a socket file.
 # [ expr1 -a expr2 ] Returns true if both the expression is true.
