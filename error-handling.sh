@@ -1,7 +1,13 @@
 #!/bin/bash
 
-# catch errors
+# set usage set arguments
+# set --help 
+
+# catch errors and exit
 set -eE -o functrace
+
+# print trace exception handling
+# set -E -o functrace
 
 failure() {
 	  local lineno=$1
