@@ -1,4 +1,8 @@
-# ")syntax error: invalid arithmetic operator (error token is "
-# you should remove trailing \r 
+# arifmetic operations, calculator
 
-amount_of_records=`echo "$amount_of_records" | tr -d '\r'`
+echo $(( 15 + 09 ))
+# bash: 15 + 09: value too great for base (error token is "09")
+
+❯ echo $(( 15 + 10#09 ))
+# 24
+
