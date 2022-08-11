@@ -16,3 +16,13 @@ echo "${file_path/$LOCAL_MAP_FOLDER_PATH/$REPLACE_FOLDER}"
 # remove space in string
 a="a b c d"
 echo ${a// /}
+
+# string multiline string multi line string new line variable
+printf -v MESSAGE "Hello
+currently I'm
+writing multiline
+message "
+printf -v MESSAGE "Hello \ncurrently I'm writing \nmultiline message "
+# double quotes are important
+echo "$MESSAGE" | clipboard
+
