@@ -4,6 +4,10 @@
 date +'%d.%m.%Y %H:%M:%S'
 date +'%s'
 
+## datetime miliseconds
+echo $(date +'%s%N' | cut -c1-13)
+# 1660242155165
+
 
 ## datetime ago
 date +'%d.%m.%Y %H:%M:%S' --date="2 hour ago"
