@@ -22,5 +22,13 @@ function finally(){
     echo "finally I need to clean up all temp files"
     exit
 }
-
 trap finally SIGINT SIGQUIT SIGTERM
+
+# send custom trap
+function print_message(){
+    echo "I've found external signal"
+}
+trap print_message SIGUSR1
+
+## send signal to current process
+kill -SIGUSR1 $$
