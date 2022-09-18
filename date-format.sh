@@ -58,3 +58,9 @@ function diff_in_seconds(){
 }
 
 diff_in_seconds 13:10
+
+# date-compare
+date --date="15:21:51 04 Mar 2022" +"%Y.%m.%dT%H:%M:%S"
+date +"%Y.%m.%dT%H:%M:%S"
+echo "2021.03.04T15:21:51" | xargs -I {} sh -c "if [[ {} < \"$(date +'%Y.%m.%dT%H:%M:%S')\" ]]; then echo 'ok'; fi"
+echo $?
