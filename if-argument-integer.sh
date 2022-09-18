@@ -6,3 +6,11 @@ else
   echo "error"
 fi    
 
+
+value=2521adsb
+# compare with regexp 
+if [[ $value =~ ^[0-9]+[a-z]+ ]]; then
+	echo "value is digits with alfa"
+else 
+	echo "value is unknown"
+fi
