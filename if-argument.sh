@@ -20,6 +20,13 @@ else
       echo "\$var is NOT empty"
 fi
 
+# string regexp string filter
+VAR1="hello Vasya"
+if [[ "$VAR1" =~ ^hello.* ]]; then
+    # condition without quotas
+    echo "greeting: $VAR1"
+fi
+
 
 if test -z "$1" 
 then
