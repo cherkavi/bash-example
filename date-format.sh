@@ -4,6 +4,8 @@
 date +'%d.%m.%Y %H:%M:%S'
 date +'%s'
 
+## [T-timestamp](https://github.com/cherkavi/python-utilities/blob/master/datetime/t-time2timestamp.py)
+
 ## datetime miliseconds
 echo $(date +'%s%N' | cut -c1-13)
 # 1660242155165
