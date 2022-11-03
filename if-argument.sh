@@ -20,6 +20,14 @@ else
       echo "\$var is NOT empty"
 fi
 
+if [ -n "$1" ]
+then
+    echo "\$var is NOT empty"      
+else
+    echo "\$var is empty"
+fi
+
+
 # string regexp string filter
 VAR1="hello Vasya"
 if [[ "$VAR1" =~ ^hello.* ]]; then
