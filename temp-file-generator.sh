@@ -1,3 +1,6 @@
+# create temp file generate temporary file
+mktemp
+# --------------
 file_name="~temp_file_"`python -c "import random;print(random.randint(100000,999999))"`".txt"
 file_name=`cat /dev/urandom | tr -cd 'a-f0-9' | head -c 32`
 # echo $file_name
