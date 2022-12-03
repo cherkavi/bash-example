@@ -10,6 +10,6 @@ full_path=`realpath $1`
 file_name="$(basename -- $full_path)"
 
 
-# real script example, current directory same directory
+# option3 real script example, current directory same directory as script
 current_directory=`dirname "$0"`
 python3 $current_directory/main.py $current_directory/email-sender.properties $*
