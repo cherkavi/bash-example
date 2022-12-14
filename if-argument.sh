@@ -11,6 +11,11 @@ fi
 # https://www.tldp.org/LDP/abs/html/comparison-ops.html
 
 
+# if replacement one line checker
+FILE=production.roles
+PATTERN="developer"
+grep $FIlE -e $PATTERN | wc -l | test $0 == 0
+
 
 # check if non empty: -n
 if [ -z "$1" ]
