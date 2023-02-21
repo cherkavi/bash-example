@@ -28,9 +28,9 @@ function is_in_array () {
 
 is_in_array "Mobile" ${arrVar[@]}
 
-# is_in_array_result="$?"
-# if [[ 1 == "$is_in_array_result" ]]; then
-if [[ `is_in_array "Mobile" "${arrVar[@]}"` > 0 ]]; then 
+is_in_array "Mobile" "${arrVar[@]}"
+is_in_array_result="$?"
+if [[ $is_in_array_result > 0 ]]; then 
     echo " not in "
 else
     echo "Mobile"" in array"
