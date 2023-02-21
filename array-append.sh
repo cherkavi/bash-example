@@ -26,7 +26,7 @@ function is_in_array () {
 }
 
 
-is_in_array "Mobile" "${arrVar[@]}"
+is_in_array "Mobile" ${arrVar[@]}
 
 # is_in_array_result="$?"
 # if [[ 1 == "$is_in_array_result" ]]; then
