@@ -22,11 +22,15 @@ find . -name "*.json" | while read each_file; do cat "$each_file" > "${each_file
 # the same but shorter
 # for each_node in gtx{0..4}-ev.zur ; do
 
+# loop through values with spaces
 IFS=$'\n' # it is necessary for non-manual input, for new line for loop line
+# !!! warning !!! for file reading must be new line at the end 
 for each_string in "one" "two" "three four five"
 do
    echo $each_string
 done
+
+
 
 my_list=("one" "two" "three")
 for each_string in ${my_list[@]}; do

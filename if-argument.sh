@@ -57,5 +57,5 @@ fi
 # [ -d filepath ] Returns true if path is directory.
 # [ -x filepath ] Returns true if file exists and executable.
 # [ -S filepath ] Returns true if file exists and its a socket file.
-# [ expr1 -a expr2 ] Returns true if both the expression is true.
-# [ expr1 -o expr2 ] Returns true if either of the expression1 or 2 is true.
+# [ expr1 && expr2 ] Returns true if both the expression is true.
+# [ expr1 || expr2 ] Returns true if either of the expression1 or 2 is true.
