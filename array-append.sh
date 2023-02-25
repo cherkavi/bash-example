@@ -15,7 +15,9 @@ for value in "${arrVar[@]}"; do
     echo $value
 done
 
-# in array 
+# is element in array 
+# 1 - candidate
+# 2 - array of elements 
 function is_in_array () {
   local next_array_element search_string="$1"
   shift
@@ -24,9 +26,11 @@ function is_in_array () {
 }
 
 
+is_in_array "Mobile" ${arrVar[@]}
+
 is_in_array "Mobile" "${arrVar[@]}"
 is_in_array_result="$?"
-if [[ 1 == "$is_in_array_result" ]]; then
+if [[ $is_in_array_result > 0 ]]; then 
     echo " not in "
 else
     echo "Mobile"" in array"
