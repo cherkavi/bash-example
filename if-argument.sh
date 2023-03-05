@@ -51,11 +51,24 @@ fi
 # ```help test```
 # test ! -f $PATH_TO_FILE;echo $?
 #
-# [ -f filepath ] Returns true if file NOT exists and executable.
+# [ -f filepath ] True if the FILE exists and is a regular file (not a directory or device).
 # [ ! -f filepath ] Returns true if file NOT exists.
-# [ -e filepath ] Returns true if file exists and executable.
-# [ -d filepath ] Returns true if path is directory.
-# [ -x filepath ] Returns true if file exists and executable.
-# [ -S filepath ] Returns true if file exists and its a socket file.
+# [ -b filepath ] True if the FILE exists and is a special block file.
+# [ -c filepath ] True if the FILE exists and is a special character file.
+# [ -d filepath ] True if the FILE exists and is a directory.
+# [ -e filepath ] True if the FILE exists and is a file, regardless of type (node, directory, socket, etc.).
+# [ -G filepath ] True if the FILE exists and has the same group as the user running the command.
+# [ -h filepath ] True if the FILE exists and is a symbolic link.
+# [ -g filepath ] True if the FILE exists and has set-group-id (sgid) flag set.
+# [ -k filepath ] True if the FILE exists and has a sticky bit flag set.
+# [ -L filepath ] True if the FILE exists and is a symbolic link.
+# [ -O filepath ] True if the FILE exists and is owned by the user running the command.
+# [ -p filepath ] True if the FILE exists and is a pipe.
+# [ -r filepath ] True if the FILE exists and is readable.
+# [ -S filepath ] True if the FILE exists and is a socket.
+# [ -s filepath ] True if the FILE exists and has nonzero size.
+# [ -u filepath ] True if the FILE exists, and set-user-id (suid) flag is set.
+# [ -w filepath ] True if the FILE exists and is writable.
+# [ -x filepath ] True if the FILE exists and is executable.
 # [ expr1 && expr2 ] Returns true if both the expression is true.
 # [ expr1 || expr2 ] Returns true if either of the expression1 or 2 is true.
