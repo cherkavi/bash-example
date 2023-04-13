@@ -9,7 +9,8 @@ eval "$var_name=10"
 echo "${!var_name}"
 eval "echo \$$var_name"
 
-
+# assign it
+ssh_user=$(eval "echo \$$user_name")    
 
 ## ------ array variable  -------
 var_name="my_array"
