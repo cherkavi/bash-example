@@ -1,5 +1,5 @@
 ## ------ simple variable -------
-# variable of variable
+# variable by name, get value from name of variable, variable of variable
 var_name="my_variable"
 
 # my_variable=10
