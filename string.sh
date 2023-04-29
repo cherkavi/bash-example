@@ -26,9 +26,3 @@ printf -v MESSAGE "Hello \ncurrently I'm writing \nmultiline message "
 # double quotes are important
 echo "$MESSAGE" | clipboard
 
-# check string for start, string starts with
-GIT_URL=$(git remote -v  | grep push  | awk '{print $2}') 
-case $GIT_URL in
-    https*) ;;
-    *) GIT_URL="https://"$( echo $GIT_URL | cut -d '@'  -f 2 | tr ':' '/'); symbol="."; GIT_URL=${GIT_URL%$symbol*};
-esac
