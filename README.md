@@ -1,7 +1,9 @@
 # bash-example
 most used bash script building blocks
 
-# how to run bash text in current terminal, execute bash text, run completion in current terminal 
+## [console shortcuts](https://ss64.com/bash/syntax-keyboard.html)
+
+## how to run bash text in current terminal, execute bash text, run completion in current terminal 
 ```sh
 # your command with bash-script-text generator is: `influx completion bash`
 eval $(influx completion bash)
