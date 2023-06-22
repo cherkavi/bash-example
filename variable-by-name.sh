@@ -2,15 +2,14 @@
 # variable by name, get value from name of variable, variable of variable
 var_name="my_variable"
 
-# my_variable=10
+# assign variable by name
 eval "$var_name=10"
+ssh_user=$(eval "echo \$$user_name")    
+ssh_user=${!user_name}
 
-# print it 
+# print variable by name
 echo "${!var_name}"
 eval "echo \$$var_name"
-
-# assign it
-ssh_user=$(eval "echo \$$user_name")    
 
 ## ------ array variable  -------
 var_name="my_array"
