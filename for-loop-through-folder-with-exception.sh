@@ -11,3 +11,10 @@ for each_folder in  /some/folder/data_transfer/*/*/*/; do
    ls -la $each_folder/*
 
 done
+
+
+# avoid issue
+# bash: /usr/bin/ls: Argument list too long
+for each_file in `ls .` ; do
+    echo $each_file
+done 
