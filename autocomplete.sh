@@ -18,6 +18,13 @@ complete -F _aws-project_completion aws-project
 
 # ------------------------------------------------
 ## autocomplete with function compgen
+## can be output of the function with 
+function list_files_in_folder(){
+	ls
+}
+list_of_possible_arguments=`list_files_in_folder`
+
+## or just a list of arguments
 list_of_possible_arguments="localdev-python staging-python vitalii"
 function _aws-project_completion(){
     COMPREPLY=($(compgen -W "$list_of_possible_arguments" "${COMP_WORDS[1]}"))
