@@ -6,6 +6,13 @@ date +'%s'
 
 ## [T-timestamp](https://github.com/cherkavi/python-utilities/blob/master/datetime/t-time2timestamp.py)
 
+## datetime format nanoseconds
+timestamp_nano_seconds=$(date +'%s%N')
+# 1678788025759967200
+seconds="${timestamp_nano_seconds:0:-9}"
+date -d "@$seconds" +"%Y-%m-%d %H:%M:%S"
+
+
 ## datetime miliseconds
 echo $(date +'%s%N' | cut -c1-13)
 # 1660242155165
