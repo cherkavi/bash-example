@@ -14,3 +14,18 @@ if [[ $value =~ ^[0-9]+[a-z]+ ]]; then
 else 
 	echo "value is unknown"
 fi
+
+
+# ---------------- integer numbers to compare --------------
+e=1694088210
+d=1694088210
+s=$(( 20 * 24 * 60 * 60 ))
+limit=$(( $d - $d - $s ))
+echo $limit
+
+# !round! parentheses
+if (( $limit < 0 )); then
+    echo "!!! $each_project: need to refresh"
+else
+    echo "... $each_project: still valid"
+fi
