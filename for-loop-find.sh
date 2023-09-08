@@ -12,3 +12,11 @@ do
    result=`python2 check_files_for_osi.py $each_file`
    echo $each_file"  "$result
 done
+
+# loop/for through all files in folder with possible special symbols like space
+find . -type f -print0 | while IFS= read -r -d '' file; do    
+    prefix="./"
+    file_name=${file#$prefix}
+    echo "Processing file: $file_name"    
+done
+
