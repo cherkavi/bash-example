@@ -10,6 +10,9 @@ my_string="Ubuntu;Linux Mint;Debian;Arch;Fedora"
 my_array=($(echo $my_string | tr ";" "\n"))
 echo ${my_array[@]}":  "${my_array[0]}", "${my_array[1]}
 
+# file in array, read file into array
+mapfile -t arrVar < my_file_with_lines.txt
+
 # Iterate the loop to read and print each array element
 for value in "${arrVar[@]}"; do
     echo $value
