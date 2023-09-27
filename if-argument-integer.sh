@@ -6,6 +6,9 @@ else
   echo "error"
 fi    
 
+# one line condition with multiple operators
+[[ $result_code == 0 ]] && echo "$result_code - ok "   ||   ( echo "error"; echo "can't continue, should quit" )
+
 
 value=2521adsb
 # compare with regexp 
