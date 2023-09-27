@@ -31,14 +31,6 @@ do
 done
 
 
-
-my_list=("one" "two" "three")
-for each_string in ${my_list[@]}; do
-   echo $each_string
-done
-
-
-
 # example of walking through list of environment variables, variable of variable, variable by name
 for each_val in "MYSQL_ROOT_PASSWORD" "MYSQL_USER" "MYSQL_PASSWORD"
 do
@@ -49,3 +41,21 @@ do
         exit 1
     fi
 done
+
+
+# for array 
+my_list=("one" "two" "three")
+for each_string in ${my_list[@]}; do
+   echo $each_string
+done
+
+# for loop elements with space
+IFS=$'\n' # shell variables: https://pubs.opengroup.org/onlinepubs/009695399/utilities/xcu_chap02.html#tag_02_05_03
+# IFS=' '
+values='hello from
+our world
+not from another'
+for each_value in $values; do
+    echo $each_value
+done
+
