@@ -1,7 +1,11 @@
 END=5
-for ((i=1;i<=END;i++)); do
+counter=0
+for (( i=1; i<=END; i++ )); do
     echo $i
+    # increase 
+    (( counter++ ))
 done
+echo $counter
 
 
 # example for loop over file list
