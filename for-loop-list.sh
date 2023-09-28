@@ -5,9 +5,15 @@ gtx{0..3}-ev.zur
 gtx4-ev.zur
 )
 
+# print all element from array 
 for each_node in "${servers[@]}" ; do
     echo "$each_node"
 done
+
+# print elements with indexes
+for (( index=0; index<${#servers[@]}; index++ )); do
+    echo $index"   "${servers[$i]}
+done 
 
 BRANDS_LIST=($(ls *.brands_s3))
 BRANDS_LIST=("one.brands_s3" "two.brands_s3" "three.brands_s3")
