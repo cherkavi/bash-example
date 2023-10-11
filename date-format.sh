@@ -26,21 +26,36 @@ date +'%d.%m.%Y' --date="2 year ago"
 ## seconds ago
 date --date="30 sec ago" +'%s'
 
-# parse datetime parse datetime
+## parse datetime parse datetime
 date --date="15:21:51 04 Mar 2022" +"%Y.%m.%d %H:%M:%S"
 date --date="15:21:51 04 Mar 2022" +%s
 
 
-# datetime seconds linux time timestamp, seconds to time
+## datetime seconds linux time timestamp, seconds to time
 date -d @1621508129 '+%Y%m%d %H%M%S'
 ## with timezone
 TZ="America/Los_Angeles" date -d '2021-05-20 10:55:29' +%s
+
+# convert to another timezone
+datetime_str_input="2021-03-04 15:21:51"
+date --date "TZ=\"UTC\" $datetime_str_input"
+
+# format output, T-time outout
+output_format='%Y.%m.%dT%H:%M:%S'
+input_datetime_str="2021-03-04 15:21:51"
+date +"$output_format" --date "TZ=\"UTC\" $input_datetime_str"
+
+# T-time to seconds
+datetime_str="2021.03.04T15:21:51"
+input_datetime_str=`echo $datetime_str | tr '.' '-'`
+date +"%s" --date "TZ=\"UTC\" $input_datetime_str"
+
 
 ## parse datetime from string
 date=$(date +'%Y-%m-%d %H:%M:%S')
 read Y M D h m s <<< ${date//[-: ]/ }
 
-
+### compare date 
 function diff_in_seconds(){
     if [[ $1 == "" ]]; then
         echo "first parameter should be time like:  13:30 or 9:15 or 15:5"
