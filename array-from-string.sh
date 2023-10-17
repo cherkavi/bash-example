@@ -9,8 +9,11 @@ IFS="," read -a myarray <<< $myvar
 # read -a myarray <<< $myvar
 
 echo "My array: ${myarray[@]}
-
-
 for each in ${myarray[@]}; do
   echo $each
 done
+
+
+# alternative way of creating array from output of command
+elements_declared=($(ls | grep -v "str" | sort))
+echo ${elements_declared[@]}
