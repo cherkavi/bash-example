@@ -14,3 +14,13 @@ user5 )
 for each_user in ${list_of_users[@]}; do
     echo $each_user
 done
+
+
+# in array, reverse tail, tail reverse, reverse head, head reverse
+    black_list=($(ls . | grep "my_file_prefix" | sort | tail -5))
+    for each_report in `ls . | grep "my_file_prefix"`; do
+       #     ! - or without "not" 
+       if [[ ! " ${black_list[*]} " =~ " ${each_report} " ]]; then
+           echo ">>> $each_report"
+       fi        
+    done 
