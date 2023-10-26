@@ -14,3 +14,26 @@ user5 )
 for each_user in ${list_of_users[@]}; do
     echo $each_user
 done
+
+
+# in array, reverse tail, tail reverse, reverse head, head reverse
+    black_list=($(ls . | grep "my_file_prefix" | sort | tail -5))
+    for each_report in `ls . | grep "my_file_prefix"`; do
+       #     ! - or without "not" 
+       if [[ ! " ${black_list[*]} " =~ " ${each_report} " ]]; then
+           echo ">>> $each_report"
+       fi        
+    done 
+
+
+# loop over array, array index loop
+unset service_name
+declare -a service_name
+service_name[0]="auth-service"
+service_name[1]="birds-service"
+service_name[2]="frontend-service"
+
+
+for i in "${!service_name[@]}"; do 
+  printf "%s\t%s\n" "$i" "${service_name[$i]}"
+done

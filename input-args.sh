@@ -3,6 +3,13 @@ echo "values:" $@
 echo "first argument" ${1}
 echo "last argument" ${!#}
 
+# default value or value from env variable
+export env_param_value="some value "
+unset env_param_value
+[[ -z $env_param_value ]] && my_param="default_value" || my_param=$env_param_value
+echo $my_param
+
+
 # check return value 
 if [[ 1 -eq "$?" ]]; then echo "error"; else echo "done"; fi
 if [[ "$1" == `echo "test"` ]];then echo "working"; fi

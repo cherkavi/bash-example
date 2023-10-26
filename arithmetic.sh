@@ -15,3 +15,12 @@ custom_value=15
 echo $((++custom_value))
 echo $((custom_value++))
 echo $((--custom_value))
+
+
+# artithmetic comparation 
+REST_COUNT=10
+COMPARE_COUNT=5
+# group_counter=2
+group_counter=2
+[[ $COMPARE_COUNT -ge $((REST_COUNT-group_counter)) ]]
+echo $?
