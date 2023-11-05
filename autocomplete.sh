@@ -1,3 +1,4 @@
+# parameters highlighting, parameters autocomplete, parameters adviser
 function aws-project() {
 	echo "your choice is: "$1
     echo "and maybe: "$2
@@ -49,12 +50,16 @@ complete -F get_auto_complete aws-project
 ## autocomplete with two arguments
 function _aws-project_completion(){
     if [[ ${COMP_CWORD} == 1 ]]; then
-	    COMPREPLY+=("first"); 
+	COMPREPLY+=("first"); 
         COMPREPLY+=("second");
         return
     fi
     if [[ ${COMP_CWORD} == 2 ]]; then 
-	    COMPREPLY+=("option1"); 
+	## access to first parameter: ${COMP_WORDS[1]}
+        #  list_of_possible_arguments=`aws s3 ls $BUCKET_NAME | awk '{print $4}' | grep ${COMP_WORDS[1]}`
+        #  COMPREPLY+=($(compgen -W "$list_of_possible_arguments" "${COMP_WORDS[2]}"))    
+	#  return
+        COMPREPLY+=("option1"); 
         COMPREPLY+=("option2");
         return
     fi

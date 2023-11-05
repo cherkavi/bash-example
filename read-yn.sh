@@ -1,5 +1,9 @@
 confirmation() {
-    echo -n "Are you sure (y/n)? "
+    if [[ -z $1 ]]; then
+        echo -n "Are you sure (y/n)? "
+    else
+        echo -n " $1 "
+    fi
     while read -r -n 1 -s answer; do
         if [[ $answer = [YyNn] ]]; then
             [[ $answer = [Yy] ]] && result=0
