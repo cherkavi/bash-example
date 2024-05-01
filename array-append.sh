@@ -32,11 +32,29 @@ function is_in_array () {
 is_in_array "Mobile" ${arrVar[@]}
 
 is_in_array "Mobile" "${arrVar[@]}"
-is_in_array_result="$?"
-if [[ $is_in_array_result > 0 ]]; then 
+# is_in_array_result="$?"
+# if [[ $is_in_array_result > 0 ]]; then 
+if [[ "$?" > 0 ]]; then 
     echo " not in "
 else
     echo "Mobile"" in array"
 fi
 
+##########################################
+folders=(one two three four)
+reverse_array() {
+    local array=("$@")
+    local length=${#array[@]}
+    local reversed_array=()
+
+    for (( i=$length-1; i>=0; i-- )); do
+        reversed_array+=("${array[i]}")
+    done
+
+    echo "${reversed_array[@]}"
+}
+reversed=$(reverse_array "${folders[@]}")
+for each_folder in ${reversed[@]}; do
+    echo $each_folder
+done
 
