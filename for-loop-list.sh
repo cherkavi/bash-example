@@ -1,5 +1,9 @@
 #!/bin/bash
 
+for each in one two three; do
+    echo $each
+done
+
 servers=( 
 gtx{0..3}-ev.zur
 gtx4-ev.zur
