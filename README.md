@@ -5,7 +5,15 @@ most used bash script building blocks
 
 ## [console shortcuts](https://ss64.com/bash/syntax-keyboard.html)
 
-## how to run bash text in current terminal, execute bash text, run completion in current terminal 
+## edit command line in vim editor 
+shortcuts: ctrl-x   ctrl-e
+```sh
+# .bashrc, default style - vi
+set -o vi
+```
+
+
+## how to run bash text in current terminal, source from text, execute bash text, run completion in current terminal 
 ```sh
 # your command with bash-script-text generator is: `influx completion bash`
 eval $(influx completion bash)
