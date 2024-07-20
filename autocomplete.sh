@@ -1,4 +1,4 @@
-# parameters highlighting, parameters autocomplete, parameters adviser
+# argument highlighting, argument autocomplete, parameters adviser, possible next option for argument, highlight options, argument completion
 function aws-project() {
 	echo "your choice is: "$1
     echo "and maybe: "$2
