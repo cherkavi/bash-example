@@ -1,7 +1,7 @@
 # bash-example
 most used bash script building blocks
 
-## [shell command visualization console graphics(https://github.com/sqshq/sampler)
+## [shell command visualization console graphics](https://github.com/sqshq/sampler)
 
 ## [console shortcuts](https://ss64.com/bash/syntax-keyboard.html)
 
