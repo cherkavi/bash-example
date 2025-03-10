@@ -7,3 +7,6 @@ trim_input_value=`echo $1 | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//' `
 
 # trim strip single quotas 
 echo 'hello' | jq . 2>/dev/null
+
+# trim spaces and remove single quotas
+echo "   'hello'   " | sed 's/^[ \t]*//;s/[ \t]*$//' | sed "s/^'//" | sed "s/'$//"
