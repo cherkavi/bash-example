@@ -70,3 +70,21 @@ for each_value in $values; do
     echo $each_value
 done
 
+# for dictionary/maps/associated arrays
+declare -A firms
+firms[microsoft]='soft'
+firms[bmw]='auto'
+firms[lidl]='food'
+
+# print key-value 
+for key in "${!firms[@]}"; do
+    echo "  $key: ${firms[$key]}"
+done
+
+# Collect all keys into a standard array
+firm_keys=("${!firms[@]}")
+# Print all keys
+echo "Keys in associative array 'firms':"
+for key in "${firm_keys[@]}"; do
+    echo "$key"
+done
