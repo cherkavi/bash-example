@@ -7,6 +7,8 @@
 PARENT_REPO='cherkavi/cheat-sheet'
 DEFAULT_BRANCH=master
 NEXT_URL="repos/cherkavi/cheat-sheet/forks"
+# Doesn't work: NEXT_URL="repos/cherkavi/cheat-sheet/forks?include=active&page=1&period=6mo&sort_by=last_updated&per_page=5"
+
 
 ### step 1
 while [ -n "$NEXT_URL" ]; do
