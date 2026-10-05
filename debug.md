@@ -6,12 +6,30 @@ trap 'echo "line ${LINENO}: ANSWER: $ANSWER"' DEBUG
 trap 'echo "$BASH_COMMAND" failed with error code $?' ERR
 ```
 
-### bash debug via special execution flags
+### bash debug file 
 ```sh
 # set -o xtrace
 bash -x /opt/mapr/installer/docker/mapr-setup.sh
 
 bash -u /opt/mapr/installer/docker/mapr-setup.sh
+```
+
+### bash debug only code block
+```sh
+set -x 
+# commands to debug
+set +x
+```
+
+### check syntax without running 
+```sh
+bash -n myscript.sh
+```
+
+### advanced syntax check
+```sh
+sudo apt install shellcheck
+shellcheck myscript.sh
 ```
 
 ### see also
